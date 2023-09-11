@@ -1,6 +1,6 @@
 ---
 title: "Assignment 2: Coding Basics"
-author: "Student Name"
+author: "Shiqi Zheng"
 output: pdf_document
 geometry: margin=2.54cm
 editor_options: 
@@ -32,10 +32,21 @@ This exercise accompanies the lessons in Environmental Data Analytics on coding 
 
 ```{r basics 1}
 #1. 
+seq1 <- seq(1, 30, 3)
+seq1
 
 #2. 
+mean <- mean(seq1)
+median <- median(seq1)
 
 #3. 
+if (mean > median) {
+  print("mean is greater than the median")
+} else if (mean < median) {
+  print("mean is smaller than the median")
+} else {
+  print("mean is equal to the median")
+}
 
 ```
 
