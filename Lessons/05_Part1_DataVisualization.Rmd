@@ -76,7 +76,7 @@ Here are some commonly used aesthetic types that can be manipulated in ggplot:
 
 ### Plotting continuous variables over time: Scatterplot and Line Plot
 
-```{r, fig.height = 3, fig.width = 4, warning = FALSE}
+```{r geom_point/subset/facet, fig.height = 3, fig.width = 4, warning = FALSE}
 # Scatterplot
 ggplot(EPAair, aes(x = Date, y = Ozone)) + 
   geom_point()
@@ -87,7 +87,7 @@ print(O3plot)
 
 # Fix this code
 O3plot2 <- ggplot(EPAair) +
-  geom_point(aes(x = Date, y = Ozone, color = "blue"))
+  geom_point(aes(x = Date, y = Ozone), color = "blue")
 print(O3plot2)
 
 # Add additional variables
@@ -110,7 +110,7 @@ PMplot.faceted2 <-
                   Site.Name == "Bryson City"), 
          aes(x = Month, y = PM2.5)) + 
   geom_point() +
-  facet_grid(Site.Name ~ Year) 
+ facet_grid(Site.Name ~ Year) 
 print(PMplot.faceted2)
 
 # Plot true time series with geom_line
@@ -126,7 +126,7 @@ print(PMplot.line)
 
 ### Plotting the relationship between two continuous variables: Scatterplot
 
-```{r, fig.height = 3, fig.width = 4, warning = FALSE}
+```{r scale reverse/trend line, fig.height = 3, fig.width = 4, warning = FALSE}
 # Scatterplot
 lightvsDO <- 
   ggplot(PeterPaul.chem.nutrients, aes(x = irradianceWater, y = dissolvedOxygen)) +
@@ -163,11 +163,11 @@ A traditional way to display summary statistics of continuous variables is a bar
 
 What might be more effective ways to display the information? Navigate to the boxplots page in the Caveats section to explore further.
 
-```{r, fig.height = 3, fig.width = 4, warning = FALSE}
+```{r boxplot/violin/frequency, fig.height = 3, fig.width = 4, warning = FALSE}
 # Box and whiskers plot
 Nutrientplot3 <-
   ggplot(PeterPaul.chem.nutrients.gathered, aes(x = lakename, y = concentration)) +
-  geom_boxplot(aes(color = nutrient)) # Why didn't we use "fill"?
+  geom_boxplot(aes(color = nutrient)) # Why didn't we use "fill"?  fill only change filling
 print(Nutrientplot3)
 
 # Dot plot
