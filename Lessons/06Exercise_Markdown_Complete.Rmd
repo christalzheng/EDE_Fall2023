@@ -12,7 +12,7 @@ toc: true
 
 ## Set up the coding environment
 
-```{r setup, warning=FALSE, echo=FALSE, include = FALSE}
+```{r setup, warning=FALSE, echo=F, include = FALSE}
 
 #Load packages
 library(tidyverse);library(here);library(lubridate)
